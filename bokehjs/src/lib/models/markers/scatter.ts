@@ -53,6 +53,8 @@ export class ScatterView extends MarkerView {
 
     const marker: string[] = new Array(len)
     marker[index] = this._marker[index]
+    if (marker[index] === undefined)
+      return
 
     this._render(ctx, [index], {sx, sy, _size: size, _angle: angle, _marker: marker} as any) // XXX
   }
